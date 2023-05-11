@@ -1,22 +1,16 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Objects;
-
-@Table
 public class User {
-    @Id
+
     private Long id;
 
-    @Column
+
     private String name;
 
-    @Column
+
     private String lastName;
 
-    @Column
+
     private Byte age;
 
     public User() {
@@ -66,5 +60,4 @@ public class User {
         return String.format("User {id = '%s', name = '%s', lastName = '%s', age = '%s'}",
                                          getId(), getName(), getLastName(), getAge());
     }
-
 }
