@@ -4,21 +4,20 @@ import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
-
-    private final static UserService us = new UserServiceImpl();
-
     public static void main(String[] args) {
-        us.createUsersTable();
-        us.saveUser("вася", "тестовый", (byte) 1);
-        us.saveUser("васёк", "тестовый", (byte) 2);
-        us.saveUser("васька", "тестовый", (byte) 3);
-        us.saveUser("василий", "тестовый", (byte) 4);
-        us.removeUserById(2);
 
-        us.getAllUsers();
+        UserService userDao = new UserServiceImpl();
 
-        us.cleanUsersTable();
+        userDao.createUsersTable();
 
-        us.dropUsersTable();
+        userDao.saveUser("Name1", "LastName1", (byte) 20);
+        userDao.saveUser("Name2", "LastName2", (byte) 25);
+        userDao.saveUser("Name3", "LastName3", (byte) 31);
+        userDao.saveUser("Name4", "LastName4", (byte) 38);
+
+        userDao.removeUserById(1);
+        userDao.getAllUsers();
+        userDao.cleanUsersTable();
+        userDao.dropUsersTable();
     }
 }

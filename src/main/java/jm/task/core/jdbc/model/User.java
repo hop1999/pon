@@ -1,16 +1,28 @@
 package jm.task.core.jdbc.model;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
 
+@Entity
+@Table(name = "user") //Содержимое скобок не обязательно,
+// если имена Column/Table совпадает с названием Класса/Поля
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "lastName")
+    private String last_Name;
 
-    private String lastName;
-
-
+    @Column(name = "age")
     private Byte age;
 
     public User() {
@@ -19,7 +31,7 @@ public class User {
 
     public User(String name, String lastName, Byte age) {
         this.name = name;
-        this.lastName = lastName;
+        this.last_Name = lastName;
         this.age = age;
     }
 
@@ -40,11 +52,11 @@ public class User {
     }
 
     public String getLastName() {
-        return lastName;
+        return last_Name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.last_Name = lastName;
     }
 
     public Byte getAge() {
@@ -57,7 +69,8 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User {id = '%s', name = '%s', lastName = '%s', age = '%s'}",
-                                         getId(), getName(), getLastName(), getAge());
+        return String.format("User id -> %s, User Name ->  %s, User lastName -> %s, User age -> %d ",
+                getId(), getName(), getLastName(), getAge());
+
     }
 }
