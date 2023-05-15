@@ -56,7 +56,7 @@ public class UserDaoHibernateImpl implements UserDao {  // запомнить DD
             // можно было через If проверить,
             // но я не зная что такое assert нажал alt shift enter,
             // надеюсь не придется из за этого переделывать,зато если придется переделывать
-            //выучу что такое assert 
+            //выучу что такое assert
             assert transaction != null;
             transaction.rollback();
         }
