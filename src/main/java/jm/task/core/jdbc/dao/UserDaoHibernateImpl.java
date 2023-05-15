@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import jm.task.core.jdbc.util.Util;
-
 import java.util.ArrayList;
 import java.util.List;
 
