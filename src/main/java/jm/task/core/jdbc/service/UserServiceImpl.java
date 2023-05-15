@@ -1,7 +1,8 @@
 package jm.task.core.jdbc.service;
 
 import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.dao.*; // если-что использую весь пакет дао :"(
+import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUsersTable() {
-        udao.cleanUsersTable();// по какой то причине метод createUsersTable не работает, хотя я уже создал 5 разных таблиц использовал 5 разных версий Hibernate и 5 разных бд... Подскажите :"(
+        udao.createUsersTable();
     }
 
     @Override
